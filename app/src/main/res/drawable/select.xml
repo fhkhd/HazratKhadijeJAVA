@@ -3,12 +3,12 @@
 
     <item
         android:state_selected="true"
-        android:color="#011350" />
+        android:color="@color/blue_main" />
 
 
     <item
         android:state_selected="false"
-        android:color="#AEA8A8" />
+        android:color="@color/mygray" />
 
 
 
