@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomeFragment">
 
 
@@ -18,9 +19,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
-
-
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spinkit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/SpinKitView.Large.Circle"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="@color/blue_main" />
+    
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_no_connection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:visibility="visible"
+        app:lottie_rawRes="@raw/no_internet_connection"/>
+
+
 
 
 
