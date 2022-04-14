@@ -30,11 +30,6 @@ public class HomeFragment extends Fragment {
     ProgressBar progressBar;
     LottieAnimationView lottieAnimationView;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
