@@ -53,7 +53,7 @@ public class SearchFragment extends Fragment {
             getApiPost.enqueue(new Callback<Data>() {
                 @Override
                 public void onResponse(Call<Data> call, Response<Data> response) {
-//                Log.e("qqq", "onResponse: "+response.body().ok);
+
                     recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
                     recyclerView.setAdapter(new SearchAdapter(response.body().result , getContext()));
 
