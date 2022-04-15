@@ -43,4 +43,14 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.home_menu);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        if(HomeFragment.webView.canGoBack()){
+            HomeFragment.webView.goBack();
+        }else if(DelNeveshteFragment.webView_delneveshte.canGoBack()){
+            DelNeveshteFragment.webView_delneveshte.goBack();
+        }else
+            finish();
+    }
 }
