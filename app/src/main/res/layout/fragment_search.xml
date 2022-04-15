@@ -4,8 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/back_white"
+    android:backgroundTint="@color/back_white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SearchFragment">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_no_connection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:visibility="visible"
+        app:lottie_rawRes="@raw/no_internet_connection"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_search"
