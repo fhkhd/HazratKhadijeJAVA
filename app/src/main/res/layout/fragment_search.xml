@@ -23,4 +23,13 @@
         android:layout_height="wrap_content"
         tools:listitem="@layout/search_item"/>
 
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spinkit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/SpinKitView.Large.Circle"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="@color/blue_main" />
+
 </RelativeLayout>

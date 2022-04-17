@@ -38,8 +38,8 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home , container , false);
         webView = view.findViewById(R.id.webview_home);
         progressBar = view.findViewById(R.id.spinkit);
-        Sprite doubleBounce = new FoldingCube();
 
+        Sprite doubleBounce = new FoldingCube();
         progressBar.setIndeterminateDrawable(doubleBounce);
 
         lottieAnimationView = view.findViewById(R.id.lottie_no_connection);

@@ -42,7 +42,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         Post model = post_list.get(position);
         holder.title_tv.setText(model.title);
         holder.description_tv.setText(model.excerpt);
-        Glide.with(context).load(model.file.thumb).placeholder(R.drawable.khadije_bg).into(holder.circleImageView);
+        Glide.with(context).load(model.file.thumb).placeholder(R.drawable.logo).into(holder.circleImageView);
 
     }
 
