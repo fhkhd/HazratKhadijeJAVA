@@ -22,7 +22,6 @@ public class DelNeveshteFragment extends Fragment {
 
     public static WebView webView_delneveshte;
     SwipeRefreshLayout swipeRefreshLayout;
-    ProgressBar progressBar;
     LottieAnimationView noConnectionLottie , progressLottie ;
 
     @Override
@@ -30,12 +29,20 @@ public class DelNeveshteFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_del_neveshte , container , false);
+        initID(view);
+        loade_webView();
+        setSwipeRefreshLayout();
+        return view;
+    }
+
+    private void initID(View view){
         webView_delneveshte = view.findViewById(R.id.webview_delneveshte);
         progressLottie = view.findViewById(R.id.progress_lottie);
         noConnectionLottie = view.findViewById(R.id.lottie_no_connection);
-        loade_webView();
-
         swipeRefreshLayout = view.findViewById(R.id.swipe_delneveshte);
+    }
+
+    private void setSwipeRefreshLayout(){
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -43,10 +50,6 @@ public class DelNeveshteFragment extends Fragment {
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
-
-        return view;
-
-
     }
 
     public void loade_webView(){
@@ -55,14 +58,12 @@ public class DelNeveshteFragment extends Fragment {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
-//                progressBar.setVisibility(View.VISIBLE);
                 progressLottie.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-//                progressBar.setVisibility(View.GONE);
                 progressLottie.setVisibility(View.INVISIBLE);
             }
         });

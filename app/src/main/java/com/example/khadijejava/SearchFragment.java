@@ -40,16 +40,21 @@ public class SearchFragment extends Fragment {
 
 
         View view = inflater.inflate(R.layout.fragment_search , container , false);
+        initId(view);
+        setProgressBar();
+        checkConnection();
+        return view;
+    }
 
+    private void initId(View view){
         progressBar = view.findViewById(R.id.spinkit);
         recyclerView = view.findViewById(R.id.recycler_search);
         lottieAnimationView = view.findViewById(R.id.lottie_no_connection);
+    }
 
+    private void setProgressBar(){
         Sprite doubleBounce = new FoldingCube();
         progressBar.setIndeterminateDrawable(doubleBounce);
-
-        checkConnection();
-        return view;
     }
 
     @SuppressLint("ResourceAsColor")
@@ -68,17 +73,13 @@ public class SearchFragment extends Fragment {
 
                     recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
                     recyclerView.setAdapter(new SearchAdapter(response.body().result , getContext()));
-
                     progressBar.setVisibility(View.GONE);
-
 
                 }
                 @Override
                 public void onFailure(Call<Data> call, Throwable t) {
                     Log.e("qqqq", "onFailure: ",t );
                     progressBar.setVisibility(View.GONE);
-
-
                 }
             });
 
@@ -92,16 +93,13 @@ public class SearchFragment extends Fragment {
 
                     recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
                     recyclerView.setAdapter(new SearchAdapter(response.body().result , getContext()));
-
                     progressBar.setVisibility(View.GONE);
-
 
                 }
                 @Override
                 public void onFailure(Call<Data> call, Throwable t) {
                     Log.e("qqqq", "onFailure: ",t );
                     progressBar.setVisibility(View.GONE);
-
 
                 }
             });

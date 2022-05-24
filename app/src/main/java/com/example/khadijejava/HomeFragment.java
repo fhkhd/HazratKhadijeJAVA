@@ -36,16 +36,26 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home , container , false);
+        initID(view);
+        setProgressBar();
+        load_webview();
+        setSwipeRefreshLayout();
+        return view;
+    }
+
+    private void initID(View view){
         webView = view.findViewById(R.id.webview_home);
         progressBar = view.findViewById(R.id.spinkit);
+        lottieAnimationView = view.findViewById(R.id.lottie_no_connection);
+        swipeRefreshLayout = view.findViewById(R.id.swipe_home);
+    }
 
+    private void setProgressBar(){
         Sprite doubleBounce = new FoldingCube();
         progressBar.setIndeterminateDrawable(doubleBounce);
+    }
 
-        lottieAnimationView = view.findViewById(R.id.lottie_no_connection);
-        load_webview();
-
-        swipeRefreshLayout = view.findViewById(R.id.swipe_home);
+    private void setSwipeRefreshLayout(){
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -54,7 +64,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        return view;
     }
 
     public void load_webview(){
